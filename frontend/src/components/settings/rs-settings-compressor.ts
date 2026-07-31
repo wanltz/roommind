@@ -162,7 +162,7 @@ export class RsSettingsCompressor extends LitElement {
               step="1"
               @change=${(e: Event) => {
                 const v = parseInt((e.target as HTMLInputElement).value, 10);
-                if (!isNaN(v) && v >= 1 && v <= 60) this._updateGroup(idx, "min_run_minutes", v);
+                if (!isNaN(v) && v >= 1 && v <= 240) this._updateGroup(idx, "min_run_minutes", v);
               }}
             ></ha-textfield>
             <div class="field-hint">${localize("compressor.min_run_hint", l)}</div>
@@ -178,7 +178,7 @@ export class RsSettingsCompressor extends LitElement {
               step="1"
               @change=${(e: Event) => {
                 const v = parseInt((e.target as HTMLInputElement).value, 10);
-                if (!isNaN(v) && v >= 1 && v <= 30) this._updateGroup(idx, "min_off_minutes", v);
+                if (!isNaN(v) && v >= 1 && v <= 240) this._updateGroup(idx, "min_off_minutes", v);
               }}
             ></ha-textfield>
             <div class="field-hint">${localize("compressor.min_off_hint", l)}</div>
