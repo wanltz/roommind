@@ -642,10 +642,10 @@ async def websocket_get_settings(
                 vol.Required("name"): str,
                 vol.Required("members"): vol.All([str], vol.Length(min=1)),
                 vol.Optional("min_run_minutes", default=DEFAULT_COMPRESSOR_MIN_RUN_MINUTES): vol.All(
-                    vol.Coerce(int), vol.Range(min=1, max=60)
+                    vol.Coerce(int), vol.Range(min=1, max=240)
                 ),
                 vol.Optional("min_off_minutes", default=DEFAULT_COMPRESSOR_MIN_OFF_MINUTES): vol.All(
-                    vol.Coerce(int), vol.Range(min=1, max=30)
+                    vol.Coerce(int), vol.Range(min=1, max=240)
                 ),
                 vol.Optional("master_entity", default=""): str,
                 vol.Optional("conflict_resolution", default=DEFAULT_CONFLICT_RESOLUTION): vol.In(CONFLICT_RESOLUTIONS),
